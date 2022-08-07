@@ -22,7 +22,7 @@ export const Principal = () =>{
                 <TabPanels>
                     <TabPanel>
                         <VStack justify='center' mt='10em'>
-                        <Logo h="40vmin" pointerEvents="none" />
+                        <Logo h="30vmin" pointerEvents="none" />
                         </VStack>
                     </TabPanel>
                     <TabPanel>
