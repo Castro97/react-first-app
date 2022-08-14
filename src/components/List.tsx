@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 import {
     Table,
     Thead,
@@ -7,38 +7,39 @@ import {
     Th,
     Td,
     TableContainer,
-  } from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
-export const List = ()=>{
-    const [fetchResponse, setfetchResponse] = useState([])
+export const List = () => {
+    const [fetchResponse, setfetchResponse] = useState([]);
 
-    useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json()).then(setfetchResponse)
-    },[])
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then(setfetchResponse);
+    }, []);
 
-    return(
+    return (
         <TableContainer>
-        <Table variant='simple' size='lg'>
-            <Thead>
-            <Tr>
-                <Th>Name</Th>
-                <Th>E-mail</Th>
-                <Th>ID</Th>
-            </Tr>
-            </Thead>
-            <Tbody>
-                {fetchResponse.map((value: any)=>{
-                    return(
-                        <Tr>
-                            <Td>{value.name}</Td>
-                            <Td>{value.email}</Td>
-                            <Td>{value.id}</Td>
-                        </Tr>
-                    )
-                })}
-            </Tbody>
-        </Table>
+            <Table variant='simple' size='lg'>
+                <Thead>
+                    <Tr>
+                        <Th>Name</Th>
+                        <Th>E-mail</Th>
+                        <Th>ID</Th>
+                    </Tr>
+                </Thead>
+                <Tbody>
+                    {fetchResponse.map((value: any) => {
+                        return (
+                            <Tr>
+                                <Td>{value.name}</Td>
+                                <Td>{value.email}</Td>
+                                <Td>{value.id}</Td>
+                            </Tr>
+                        );
+                    })}
+                </Tbody>
+            </Table>
         </TableContainer>
-    )
-
-}
+    );
+};
