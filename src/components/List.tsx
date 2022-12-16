@@ -18,6 +18,10 @@ export const List = () => {
             .then(setfetchResponse);
     }, []);
 
+    // const customList = fetchResponse.map((ids: any) => {return ids.id});
+    // console.log(fetchResponse.filter((group: any) => group.id.includes(1)));
+    
+    console.log(fetchResponse);
     return (
         <TableContainer>
             <Table variant='simple' size='lg'>
